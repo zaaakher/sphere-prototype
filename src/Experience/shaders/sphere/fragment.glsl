@@ -1,6 +1,10 @@
-varying vec3 vColor;
+varying vec3 vNormal;
+varying float vPerlinStrength;
 
 void main()
 {
-    gl_FragColor = vec4(vColor, 1.0);
+    float temp = vPerlinStrength+0.1;
+    temp *=0.9;
+
+    gl_FragColor = vec4(temp*0.9, temp*0.9,temp*5.9, 1.0);
 }
