@@ -31,7 +31,7 @@ vec4 getDisplacedPosition(vec3 _position)
     vec3 displacementPosition = _position;
     displacementPosition += perlin4d(vec4(displacementPosition * uDistortionFrequency, uTime)) * uDistortionStrength;
 
-    float perlinStrength = perlin4d(vec4(displacementPosition * uDisplacementFrequency, uTime)) * rand(vec2(50.2));
+    float perlinStrength = perlin4d(vec4(displacementPosition * uDisplacementFrequency, uTime));
     
     vec3 displacedPosition = _position;
     displacedPosition += normalize(_position) * perlinStrength * uDisplacementStrength;

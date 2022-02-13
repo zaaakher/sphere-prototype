@@ -193,9 +193,9 @@ export default class Sphere {
         },
 
         uOffset: { value: new THREE.Vector3() },
-
+        // Math.random() * 10 
         uDistortionFrequency: { value: 1.5 },
-        uDistortionStrength: { value: 0.65 },
+        uDistortionStrength: { value: 0.05 },
         uDisplacementFrequency: { value: 2.12 },
         uDisplacementStrength: { value: 0.152 },
 
