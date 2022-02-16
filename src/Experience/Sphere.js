@@ -173,13 +173,14 @@ export default class Sphere {
   }
 
   setMaterial() {
+    let date = new Date();
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         // uLightAColor: { value: "#0063ff" },
         uLightAColor: { value: this.lights.a.color.instance },
         uLightAPosition: { value: new THREE.Vector3(1, 1, 0) },
         uLightAIntensity: { value: this.lights.a.intensity },
-        
+
         // uLightBColor: { value: "#0063ff" },
         // uLightBColor: { value: this.lights.b.color.instance },
         uLightBPosition: { value: new THREE.Vector3(-1, -1, 0) },
@@ -193,17 +194,22 @@ export default class Sphere {
         },
 
         uOffset: { value: new THREE.Vector3() },
-        // Math.random() * 10 
+        // Math.random() * 10
         uDistortionFrequency: { value: 1.5 },
-        uDistortionStrength: { value: 0.05 },
         uDisplacementFrequency: { value: 2.12 },
         uDisplacementStrength: { value: 0.152 },
+        uDistortionStrength: { value: 0.5 },
+        
+        // uFresnelOffset: { value: -1.609 },
+        // uFresnelMultiplier: { value: 3.587 },
+        // uFresnelPower: { value: 1.793 },
 
-        uFresnelOffset: { value: -1.609 },
-        uFresnelMultiplier: { value: 3.587 },
-        uFresnelPower: { value: 1.793 },
+        uHighColor: { value: new THREE.Vector3(5.1, 0.907, 0.01) },
+        uLowColor: { value: new THREE.Vector3(0.6, 0.08, 0.01) },
+        // uStartColor: { value: new THREE.Vector3(0.569, 0.796, 0.243) },
+        // uEndColor: { value: new THREE.Vector3(0.675, 0.824, 0.929) },
 
-        uTime: { value: 0 },
+        uTime: { value: date.getSeconds() * date.getMinutes() },
       },
       defines: {
         USE_TANGENT: "",
